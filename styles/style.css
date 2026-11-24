@@ -13,4 +13,113 @@
 .page {
   min-inline-size: 320px;
   min-block-size: 100dvb;
+  font-family: var(--font-primary);
+  font-variation-settings: "wght" var(--weight-text);
+  background-image: var(--bg-gradient);
+  background-size: cover;
+  background-attachment: fixed;
+  min-height: 100vh;
+  margin: 0; 
+}
+
+.content-width {
+  width: var(--content-width);
+  margin-inline: auto; 
+}
+
+.header {
+  margin-top: clamp(40px, 10vw, 100px);
+  padding-block: clamp(40px, 10vw, 130px) clamp(30px, 8vw, 100px);
+  box-sizing: border-box;
+  border: 2px solid #000;
+  background-color: #fff;
+}
+
+.header__title {
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: clamp(10px, 2vw, 20px);
+  text-align: center;
+}
+
+.header__logo {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: clamp(35px, 8vw, 65px);
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.header__subtitle {
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: clamp(16px, 3vw, 23px);
+  line-height: 100%;
+  text-transform: uppercase;
+}
+
+.card {
+  background-color: #fff;
+  border: 2px solid #000;
+  margin-bottom: clamp(30px, 5vw, 52px);
+  box-sizing: border-box;
+  padding: clamp(10px, 2vw, 16px) clamp(6px, 1.5vw, 8px);
+}
+
+.card__title {
+  font-family: var(--font-primary);
+  font-variation-settings: "wiht" var(--weight-title);
+  font-size: 18px;
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+.card__image {
+  width: 100%;
+  display: block;
+  border: 2px solid #000;
+  margin-bottom: 20px;
+}
+
+.card__content {
+  margin-bottom: 20px;
+}
+
+.card__text {
+  font-family: var(--font-primary);
+  font-variation-settings: "wght" var(--weight-text);
+  font-size: 16px;
+  line-height: 1.4;
+  margin-top: 0;
+  margin-bottom: 15px;
+}
+
+.card__buttons {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.button {
+display: inline-flex;
+align-items: center;
+gap: 8px;
+padding: 10px 15px;
+background-color: transparent;
+border: 2px solid #000;
+cursor: pointer;
+font-family: var(--font-primary);
+font-size: 14px;
+}
+
+.button__text {
+  font-family: var(--font-primary);
+  font-variation-settings: "wght" var(--weight-text); 
+}
+
+.card__icon {
+  width: 24px;
+  height: 24px;
 }
