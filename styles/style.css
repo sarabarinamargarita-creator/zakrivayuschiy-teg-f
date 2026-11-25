@@ -62,7 +62,6 @@
 
 main {
   padding-top: clamp(40px, 8vw, 98px);
-  padding-bottom: clamp(40px, 8vw, 98px);
 }
 
 .card {
@@ -74,14 +73,18 @@ main {
   overflow: hidden;
 }
 
+.card:last-child {
+  margin-bottom: 0;
+}
+
 .card__title {
   font-family: var(--font-primary);
   font-variation-settings: "wght" var(--weight-title);
   font-size: 18px;
-  margin-top: 0;
-  line-height: 100%;
   margin: 0;
+  line-height: 100%;
   padding: 6px 8px;
+  border-bottom: 2px solid #000;
 }
 
 .card__image {
@@ -89,6 +92,7 @@ main {
   height: 696px;
   object-fit: cover;
   display: block;
+  border: none;
   border-bottom: 2px solid #000;
 }
 
@@ -188,10 +192,116 @@ main {
   width: 100%;
 }
 
+.footer {
+  padding-top: 20px;
+  padding-bottom: 40px;
+  display: flex;
+  justify-content: center;
+}
+.card:last-child {
+  margin-bottom: 32px;
+}
+
+.card__save-button {
+  width: 335px;
+  height: 55px;
+  gap: 8px;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #fff;
+  border: 2px solid #000;
+  box-sizing: border-box;
+  cursor: pointer;
+}
+
+.card__save-button:hover {
+  background-color: #f0f0f0;
+}
+
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 90%;
+  max-width: 353px;
+  height: 191px;
+  padding: 30px;
+  border: 2px solid #000;
+  background-color: #fff;
+  box-sizing: border-box;
+  margin: 0;
+  z-index: 100;
+}
+
+.modal[open] {
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  gap: 30px;
+  align-items: start;
+}
+
+.modal__content {
+  display: grid;
+  grid-template-columns: 39px 1fr;
+  gap: 30px;
+  width: 100%;
+}
+
+.modal__icon {
+  width: 39px;
+  height: 39px;
+  margin-top: 10px;
+}
+
+.modal__text {
+  font-family: var(--font-accent);
+  font-size: 14px;
+  line-height: 1.5;
+  text-align: left;
+  text-transform: uppercase;
+  margin: 0;
+}
+
+.modal__button {
+  grid-column: 1 / -1;
+  width: 293px;
+  height: 38px;
+  justify-content: center;
+  padding: 0;
+  background-color: #fff;
+  margin-top: 0;
+  justify-self: center;
+}
+
+.modal::backdrop {
+  background-color: rgba(0, 0, 0, 0.75);
+}
+
 @supports ((text-stroke: 1px black) or (-webkit-text-stroke: 1px black)) {
   .card__label {
     text-shadow: none;
     -webkit-text-stroke: 1px var(--label-stroke-color);
     text-stroke: 1px var(--label-stroke-color);
+  }
+}
+
+@media (width <= 375px) {
+  .card__image {
+    height: 371px;
+  }
+  .card__content {
+    padding: 50px;
+  }
+  .card__save-button {
+    width: 100%; 
+    max-width: 375px;
+  }
+  .modal {
+    width: calc(100% - 30px);
+    max-width: 353px;
   }
 }
