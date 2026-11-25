@@ -76,7 +76,7 @@ main {
 
 .card__title {
   font-family: var(--font-primary);
-  font-variation-settings: "wiht" var(--weight-title);
+  font-variation-settings: "wght" var(--weight-title);
   font-size: 18px;
   margin-top: 0;
   line-height: 100%;
@@ -86,51 +86,112 @@ main {
 
 .card__image {
   width: 100%;
+  height: 696px;
+  object-fit: cover;
   display: block;
   border-bottom: 2px solid #000;
-  border: none;
 }
 
 .card__content {
-  padding: 25px 25px 88px 25px;
+  padding: 25px 25px 25px 25px;
   box-sizing: border-box;
 }
 
 .card__text {
   font-family: var(--font-primary);
   font-variation-settings: "wght" var(--weight-text);
-  font-size: 16px;
+  font-size: 18px;
+  line-height: 21px;
   font-weight: 400;
-  line-height: 1.4;
   margin-top: 0;
-  margin-bottom: 15px;
+  margin-bottom: 25px;
+}
+
+.card__text:last-child {
+  margin-bottom: 0;
 }
 
 .card__buttons {
-  padding: 0 clamp(6px, 1.5vw, 8px) clamp(10px, 2vw, 16px) clamp(6px, 1.5vw, 8px);
   display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 8px;
+  padding: 0 25px 25px 25px;
 }
 
+.card__like-button {
+  width: 130px;
+  height: 38px;
+  padding: 0;
+  display: inline-flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.card__icon-button {
+  background: transparent;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 27px;
+  height: 24px;
+}
 .button {
-display: inline-flex;
-align-items: center;
-gap: 8px;
-padding: 10px 15px;
-background-color: transparent;
-border: 2px solid #000;
-cursor: pointer;
-font-family: var(--font-primary);
-font-size: 14px;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 15px;
+  background-color: transparent;
+  border: 2px solid #000;
+  cursor: pointer;
+  font-family: var(--font-primary);
 }
 
 .button__text {
-  font-family: var(--font-primary);
-  font-variation-settings: "wght" var(--weight-text); 
+  font-family: var(--font-accent);
+  font-variation-settings: "wght" var(--weight-text);
+  font-size: 14px;
+  line-height: 90%;
 }
 
 .card__icon {
   width: 24px;
   height: 24px;
+}
+
+.card__label {
+  position: absolute;
+  top: 25px;
+  right: 25px;
+  z-index: 1;
+  font-family: var(--font-accent);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 100%;
+  text-transform: uppercase;
+
+  opacity: var(--label-opacity);
+  mix-blend-mode: hard-light;
+
+  text-shadow: 
+    -1px -1px 0 var(--label-stroke-color),
+    1px -1px 0 var(--label-stroke-color),
+    -1px 1px 0 var(--label-stroke-color), 
+    1px 1px 0 var(--label-stroke-color);
+}
+
+.card__image-wrapper {
+  position: relative;
+  width: 100%;
+}
+
+@supports ((text-stroke: 1px black) or (-webkit-text-stroke: 1px black)) {
+  .card__label {
+    text-shadow: none;
+    -webkit-text-stroke: 1px var(--label-stroke-color);
+    text-stroke: 1px var(--label-stroke-color);
+  }
 }
