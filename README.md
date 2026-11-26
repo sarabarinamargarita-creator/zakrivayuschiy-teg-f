@@ -1,6 +1,7 @@
 # Проект «Закрывающий тег»
 
-Ссылка на проект: https://sarabarinamargarita-creator.github.io/zakrivayuschiy-teg-f/
+Ссылка на проект: 
+https://github.com/sarabarinamargarita-creator/zakrivayuschiy-teg-f
 
 Учебный проект, посвященный пути студента на курсе веб-разработки. Это интерактивная страница-воспоминание с элементами ретро-игр, анимациями и адаптивной версткой.
 
