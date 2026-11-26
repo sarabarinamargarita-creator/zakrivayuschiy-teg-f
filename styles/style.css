@@ -73,10 +73,6 @@ main {
   overflow: hidden;
 }
 
-.card:last-child {
-  margin-bottom: 0;
-}
-
 .card__title {
   font-family: var(--font-primary);
   font-variation-settings: "wght" var(--weight-title);
