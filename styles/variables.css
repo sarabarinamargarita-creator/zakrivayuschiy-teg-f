@@ -26,4 +26,6 @@
   --label-opacity: 0.4;
   --contour-color: #000;
   --animation-fill-color: #ff0000;
+  --accent-color: #000;
+  --text-color-base: #fff;
 }
